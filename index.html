@@ -19,6 +19,9 @@
     section[id] { scroll-margin-top: 84px; }
     body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
     ::selection { background: #EFEDE6; color: #0E0E0C; }
+    #asForm input::placeholder, #asForm textarea::placeholder { color: #6C6A63; }
+    #asForm input:-webkit-autofill { -webkit-text-fill-color: #EFEDE6; transition: background-color 9999s; }
+    .as-fgrid { grid-template-columns: 1fr 1fr; }
     @keyframes asBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
 
     @media (max-width: 1080px) {
@@ -49,6 +52,7 @@
       .as-process { grid-template-columns: 1fr 1fr !important; }
       .as-contact-top { grid-template-columns: 1fr !important; gap: 14px !important; }
       .as-contact-cols { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .as-fgrid { grid-template-columns: 1fr !important; }
       #about { display: flex !important; flex-direction: column !important; }
       .as-about-wrap { padding-right: 40px !important; order: 1 !important; }
       .as-about-wrap > div { grid-template-columns: 1fr !important; gap: 22px !important; }
@@ -423,16 +427,126 @@
 
         <h2 data-reveal="" style="font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(48px,8vw,140px);line-height:0.98;letter-spacing:-0.045em;margin:0 0 56px;text-wrap:balance;text-transform:lowercase;color:#EFEDE6;max-width:16ch;">let's design <b style="font-weight:500;">your sound.</b></h2>
 
-        <div class="as-contact-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-top:56px;border-top:1px solid rgba(239,237,230,0.12);align-items:start;">
-          <p data-reveal="" data-reveal-delay="0.08" style="font-size:20px;line-height:1.45;color:#D2CFC6;max-width:36ch;margin:0;">Audio systems for UX, motion, brands, and interactive products. Start a project or <em style="font-style:normal;color:#EFEDE6;font-weight:500;">ask about scope.</em> Replies within a working day.</p>
-          <div data-reveal="" data-reveal-delay="0.16" style="display:flex;flex-direction:column;gap:24px;">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="mailto:hello@adamsaid.studio" style="display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;border:1.25px solid #EFEDE6;color:#EFEDE6;text-decoration:none;transition:transform .35s,background .35s,color .35s;" style-hover="background:#EFEDE6;color:#0E0E0C;transform:translateY(-1px);">Start a project <span>→</span></a>
+        <div class="as-contact-cols" style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;padding-top:56px;border-top:1px solid rgba(239,237,230,0.12);align-items:start;">
+
+          <!-- ── left: intro + secondary actions + details ── -->
+          <div data-reveal="" data-reveal-delay="0.08" style="display:flex;flex-direction:column;gap:36px;">
+            <p style="font-size:20px;line-height:1.45;color:#D2CFC6;max-width:34ch;margin:0;">Audio systems for UX, motion, brands, and interactive products. Tell me about the project below — or <em style="font-style:normal;color:#EFEDE6;font-weight:500;">ask about scope.</em> Replies within a working day.</p>
+
+            <div style="display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid rgba(239,237,230,0.12);">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#918F88;">Prefer to talk?</span>
+              <p style="font-size:15px;line-height:1.5;color:#D2CFC6;margin:0;max-width:30ch;">Book a 30-minute introductory call once you've shared the basics.</p>
+              <!-- CALENDLY: replace the href with your scheduling link -->
+              <a id="asCal" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#EFEDE6;text-decoration:none;border-bottom:1px solid rgba(239,237,230,0.28);padding-bottom:3px;transition:border-color .3s,gap .3s;" style-hover="border-color:#EFEDE6;gap:13px;">Schedule a call <span style="color:#918F88;">→</span></a>
             </div>
-            <div style="display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:1px solid rgba(239,237,230,0.12);">
+
+            <div style="display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:1px solid rgba(239,237,230,0.12);">
               <a href="mailto:hello@adamsaid.studio" style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#EFEDE6;letter-spacing:0.18em;text-transform:uppercase;padding:8px 0;text-decoration:none;transition:padding-left .3s;" style-hover="padding-left:8px;"><span>email <span style="color:#918F88;">/</span></span><span style="color:#D2CFC6;font-weight:400;letter-spacing:0.06em;text-transform:none;">hello@adamsaid.studio</span></a>
               <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#EFEDE6;letter-spacing:0.18em;text-transform:uppercase;padding:8px 0;"><span>linkedin <span style="color:#918F88;">/</span></span><span style="color:#D2CFC6;font-weight:400;letter-spacing:0.06em;text-transform:none;">/in/adamsaid</span></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:#EFEDE6;letter-spacing:0.18em;text-transform:uppercase;padding:8px 0;"><span>based <span style="color:#918F88;">/</span></span><span style="color:#D2CFC6;font-weight:400;letter-spacing:0.06em;text-transform:none;">[ city ] · remote worldwide</span></div>
+            </div>
+          </div>
+
+          <!-- ── right: project inquiry form ── -->
+          <div data-reveal="" data-reveal-delay="0.16">
+            <form id="asForm" novalidate="" aria-label="Project inquiry" style="display:flex;flex-direction:column;gap:26px;border:1px solid rgba(239,237,230,0.16);background:#131311;padding:clamp(24px,3vw,40px);">
+
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#918F88;">/ project inquiry</span>
+                <h3 style="font-family:'Inter Tight',sans-serif;font-size:clamp(26px,3vw,34px);font-weight:300;letter-spacing:-0.035em;line-height:1;margin:0;text-transform:lowercase;color:#EFEDE6;">start a <b style="font-weight:500;">project.</b></h3>
+                <p style="font-size:15px;line-height:1.5;color:#D2CFC6;margin:0;max-width:46ch;">Tell me a little about what you're building. Whether it's a product, an interface, or a film, I'd love to hear about it.</p>
+              </div>
+
+              <!-- honeypot (bots fill this; humans never see it) -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;">
+                <label>Leave this field empty<input type="text" id="asHp" name="website_hp" tabindex="-1" autocomplete="off"></label>
+              </div>
+
+              <!-- name / email / company / website -->
+              <div class="as-fgrid" style="display:grid;gap:20px;">
+                <div style="display:flex;flex-direction:column;">
+                  <label for="fld-name" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;margin-bottom:9px;">Name <span style="color:#918F88;">*</span></label>
+                  <input id="fld-name" name="name" type="text" required="" autocomplete="name" placeholder="Your name" aria-describedby="err-name" style="width:100%;box-sizing:border-box;background:#0E0E0C;border:1px solid rgba(239,237,230,0.16);color:#EFEDE6;font-family:'Inter Tight',sans-serif;font-size:15px;letter-spacing:-0.005em;padding:13px 15px;outline:none;transition:border-color .3s;" style-focus="border-color:#EFEDE6;">
+                  <span id="err-name" role="alert" style="display:none;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#E0705C;margin-top:8px;">Please enter your name.</span>
+                </div>
+                <div style="display:flex;flex-direction:column;">
+                  <label for="fld-email" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;margin-bottom:9px;">Email <span style="color:#918F88;">*</span></label>
+                  <input id="fld-email" name="email" type="email" required="" autocomplete="email" placeholder="you@company.com" aria-describedby="err-email" style="width:100%;box-sizing:border-box;background:#0E0E0C;border:1px solid rgba(239,237,230,0.16);color:#EFEDE6;font-family:'Inter Tight',sans-serif;font-size:15px;letter-spacing:-0.005em;padding:13px 15px;outline:none;transition:border-color .3s;" style-focus="border-color:#EFEDE6;">
+                  <span id="err-email" role="alert" style="display:none;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#E0705C;margin-top:8px;">Please enter a valid email.</span>
+                </div>
+                <div style="display:flex;flex-direction:column;">
+                  <label for="fld-company" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;margin-bottom:9px;">Company <span style="color:#5D5C56;">(optional)</span></label>
+                  <input id="fld-company" name="company" type="text" autocomplete="organization" placeholder="Company or studio" style="width:100%;box-sizing:border-box;background:#0E0E0C;border:1px solid rgba(239,237,230,0.16);color:#EFEDE6;font-family:'Inter Tight',sans-serif;font-size:15px;letter-spacing:-0.005em;padding:13px 15px;outline:none;transition:border-color .3s;" style-focus="border-color:#EFEDE6;">
+                </div>
+                <div style="display:flex;flex-direction:column;">
+                  <label for="fld-website" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;margin-bottom:9px;">Website <span style="color:#5D5C56;">(optional)</span></label>
+                  <input id="fld-website" name="website" type="url" autocomplete="url" placeholder="https://" style="width:100%;box-sizing:border-box;background:#0E0E0C;border:1px solid rgba(239,237,230,0.16);color:#EFEDE6;font-family:'Inter Tight',sans-serif;font-size:15px;letter-spacing:-0.005em;padding:13px 15px;outline:none;transition:border-color .3s;" style-focus="border-color:#EFEDE6;">
+                </div>
+              </div>
+
+              <!-- project type -->
+              <fieldset style="border:0;padding:0;margin:0;min-width:0;">
+                <legend style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;padding:0;">Project type <span style="color:#918F88;">*</span></legend>
+                <div data-chip-group="ptype" data-multi="true" role="group" aria-label="Project type" style="display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;">
+                  <button type="button" data-val="Product Sound System" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Product Sound System</button>
+                  <button type="button" data-val="Interface Audio" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Interface Audio</button>
+                  <button type="button" data-val="Automotive / HMI" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Automotive / HMI</button>
+                  <button type="button" data-val="Wearables / Devices" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Wearables / Devices</button>
+                  <button type="button" data-val="Sound for Picture" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Sound for Picture</button>
+                  <button type="button" data-val="Sonic Branding" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Sonic Branding</button>
+                  <button type="button" data-val="Audio Cleanup & Restoration" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Audio Cleanup &amp; Restoration</button>
+                  <button type="button" data-val="Ongoing Design Partnership" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Ongoing Design Partnership</button>
+                  <button type="button" data-val="Something Else" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Something Else</button>
+                </div>
+                <span id="err-ptype" role="alert" style="display:none;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#E0705C;margin-top:11px;">Select at least one project type.</span>
+              </fieldset>
+
+              <!-- timeline / budget -->
+              <div class="as-fgrid" style="display:grid;gap:24px;">
+                <fieldset style="border:0;padding:0;margin:0;min-width:0;">
+                  <legend style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;padding:0;">Timeline <span style="color:#5D5C56;">(optional)</span></legend>
+                  <div data-chip-group="timeline" data-multi="false" role="group" aria-label="Timeline" style="display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;">
+                    <button type="button" data-val="ASAP" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">ASAP</button>
+                    <button type="button" data-val="This Quarter" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">This Quarter</button>
+                    <button type="button" data-val="1–2 Months" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">1–2 Months</button>
+                    <button type="button" data-val="3+ Months" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">3+ Months</button>
+                    <button type="button" data-val="Just Exploring" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Just Exploring</button>
+                  </div>
+                </fieldset>
+                <fieldset style="border:0;padding:0;margin:0;min-width:0;">
+                  <legend style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;padding:0;">Estimated budget <span style="color:#5D5C56;">(optional)</span></legend>
+                  <div data-chip-group="budget" data-multi="false" role="group" aria-label="Estimated budget" style="display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;">
+                    <button type="button" data-val="Under $5k" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Under $5k</button>
+                    <button type="button" data-val="$5k–$10k" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">$5k–$10k</button>
+                    <button type="button" data-val="$10k–$25k" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">$10k–$25k</button>
+                    <button type="button" data-val="$25k+" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">$25k+</button>
+                    <button type="button" data-val="Not Sure Yet" aria-pressed="false" style="display:inline-flex;align-items:center;padding:9px 15px;border:1px solid rgba(239,237,230,0.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.04em;color:#D2CFC6;background:transparent;cursor:pointer;transition:border-color .3s,color .3s,background .3s;" style-hover="border-color:#918F88;color:#EFEDE6;">Not Sure Yet</button>
+                  </div>
+                </fieldset>
+              </div>
+
+              <!-- description -->
+              <div style="display:flex;flex-direction:column;">
+                <label for="fld-desc" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D2CFC6;margin-bottom:9px;">Tell me about the project <span style="color:#918F88;">*</span></label>
+                <textarea id="fld-desc" name="description" required="" rows="6" maxlength="4000" placeholder="What are you building? What problem are you trying to solve? Any links, references, constraints, or timelines are helpful." aria-describedby="err-desc desc-help" style="width:100%;box-sizing:border-box;background:#0E0E0C;border:1px solid rgba(239,237,230,0.16);color:#EFEDE6;font-family:'Inter Tight',sans-serif;font-size:15px;line-height:1.55;letter-spacing:-0.005em;padding:14px 15px;outline:none;resize:vertical;min-height:150px;transition:border-color .3s;" style-focus="border-color:#EFEDE6;"></textarea>
+                <span id="desc-help" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.06em;line-height:1.6;text-transform:uppercase;color:#6C6A63;margin-top:10px;">Have references? Paste links to Figma, Drive, Dropbox, video, or audio right here.</span>
+                <span id="err-desc" role="alert" style="display:none;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#E0705C;margin-top:8px;">Tell me a little about the project.</span>
+              </div>
+
+              <!-- submit -->
+              <div style="display:flex;flex-direction:column;gap:16px;">
+                <span id="asFormErr" role="alert" style="display:none;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#E0705C;">Something went wrong. Please try again or email hello@adamsaid.studio.</span>
+                <button type="submit" id="asSubmit" style="width:100%;height:54px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;background:#EFEDE6;color:#0E0E0C;border:1.25px solid #EFEDE6;cursor:pointer;transition:transform .35s,background .35s;" style-hover="background:#d8d6cd;transform:translateY(-1px);"><span class="as-sub-lbl">Submit Project Inquiry</span> <span>→</span></button>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6C6A63;text-align:center;">Prefer email? <a href="mailto:hello@adamsaid.studio" style="color:#D2CFC6;text-decoration:none;border-bottom:1px solid rgba(239,237,230,0.24);">hello@adamsaid.studio</a></span>
+              </div>
+            </form>
+
+            <!-- success state (shown after submit) -->
+            <div id="asSuccess" role="status" aria-live="polite" style="display:none;flex-direction:column;gap:20px;border:1px solid rgba(239,237,230,0.16);background:#131311;padding:clamp(32px,4vw,56px);min-height:340px;justify-content:center;">
+              <span style="width:44px;height:44px;border:1.25px solid var(--accent,#3ad17a);border-radius:50%;display:grid;place-content:center;color:var(--accent,#3ad17a);font-size:18px;line-height:1;">✓</span>
+              <h3 style="font-family:'Inter Tight',sans-serif;font-size:clamp(28px,3.4vw,40px);font-weight:300;letter-spacing:-0.035em;line-height:1.02;margin:0;text-transform:lowercase;color:#EFEDE6;">thanks — I'll review <b style="font-weight:500;">this personally.</b></h3>
+              <p style="font-size:16px;line-height:1.5;color:#D2CFC6;margin:0;max-width:38ch;">I usually respond within 1–2 business days. If it's urgent, email <a href="mailto:hello@adamsaid.studio" style="color:#EFEDE6;text-decoration:none;border-bottom:1px solid rgba(239,237,230,0.28);">hello@adamsaid.studio</a>.</p>
+              <button type="button" id="asBackWork" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;border:1.25px solid #EFEDE6;color:#EFEDE6;background:transparent;cursor:pointer;transition:transform .35s,background .35s,color .35s;" style-hover="background:#EFEDE6;color:#0E0E0C;transform:translateY(-1px);">Back to work <span>→</span></button>
             </div>
           </div>
         </div>
@@ -486,6 +600,181 @@ class Component extends DCLogic {
 
   renderVals() { return { time: this.state.time }; }
 
+  _initForm() {
+    const form = document.getElementById('asForm');
+    if (!form || form._wired) return;
+    form._wired = true;
+
+    // ═══════════════ CONFIG — edit these ═══════════════
+    // FORM_ENDPOINT: paste a form-service endpoint (Formspree / Web3Forms /
+    // Getform). These IDs are safe in the browser — they carry no secret key,
+    // so nothing sensitive is exposed client-side. While it's left as the
+    // placeholder, submitting falls back to the visitor's email client so no
+    // inquiry is ever lost.
+    //   • Formspree:  https://formspree.io/f/xxxxxxxx
+    //   • Web3Forms:  https://api.web3forms.com/submit  (add access_key below)
+    // If you later move this site onto Next.js/Vercel, point FORM_ENDPOINT at
+    // your own /api/inquiry route and send mail with Resend/SendGrid using
+    // server-side env vars (RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL).
+    const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+    const CONTACT_EMAIL = 'hello@adamsaid.studio';
+    // Calendly link lives on the #asCal anchor in the markup — replace its href.
+    // ═══════════════════════════════════════════════════
+
+    const el = (id) => document.getElementById(id);
+    const submitBtn = el('asSubmit');
+    const submitLabel = submitBtn.querySelector('.as-sub-lbl');
+    const topErr = el('asFormErr');
+    const successPanel = el('asSuccess');
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const setChip = (btn, on) => {
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.style.background = on ? '#EFEDE6' : 'transparent';
+      btn.style.color = on ? '#0E0E0C' : '#D2CFC6';
+      btn.style.borderColor = on ? '#EFEDE6' : 'rgba(239,237,230,0.18)';
+    };
+
+    // build selectable chip groups
+    const groups = {};
+    form.querySelectorAll('[data-chip-group]').forEach(g => {
+      const name = g.getAttribute('data-chip-group');
+      const multi = g.getAttribute('data-multi') === 'true';
+      const sel = new Set();
+      groups[name] = { multi, sel, node: g };
+      g.querySelectorAll('button[data-val]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const v = btn.getAttribute('data-val');
+          if (multi) {
+            if (sel.has(v)) { sel.delete(v); setChip(btn, false); }
+            else { sel.add(v); setChip(btn, true); }
+          } else {
+            const on = sel.has(v);
+            sel.clear();
+            g.querySelectorAll('button[data-val]').forEach(b => setChip(b, false));
+            if (!on) { sel.add(v); setChip(btn, true); }
+          }
+          if (name === 'ptype') hideErr('ptype');
+        });
+      });
+    });
+
+    const showErr = (key, msg) => {
+      const e = el('err-' + key);
+      if (e) { if (msg) e.textContent = msg; e.style.display = 'block'; }
+      const f = el('fld-' + key);
+      if (f) { f.setAttribute('aria-invalid', 'true'); f.style.borderColor = '#E0705C'; }
+    };
+    const hideErr = (key) => {
+      const e = el('err-' + key);
+      if (e) e.style.display = 'none';
+      const f = el('fld-' + key);
+      if (f) { f.removeAttribute('aria-invalid'); f.style.borderColor = 'rgba(239,237,230,0.16)'; }
+    };
+    ['name', 'email', 'desc'].forEach(k => {
+      const f = el('fld-' + k);
+      if (f) f.addEventListener('input', () => hideErr(k));
+    });
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      // honeypot — a real user never fills this; bots do
+      const hp = el('asHp');
+      if (hp && hp.value) return;
+      topErr.style.display = 'none';
+
+      const name = el('fld-name').value.trim();
+      const email = el('fld-email').value.trim();
+      const desc = el('fld-desc').value.trim();
+      const ptype = [...groups.ptype.sel];
+
+      let firstFocus = null;
+      hideErr('name'); hideErr('email'); hideErr('desc'); hideErr('ptype');
+      if (!name) { showErr('name'); firstFocus = firstFocus || el('fld-name'); }
+      if (!email || !emailRe.test(email)) { showErr('email', email ? 'Please enter a valid email.' : 'Please enter your email.'); firstFocus = firstFocus || el('fld-email'); }
+      if (ptype.length === 0) { showErr('ptype'); firstFocus = firstFocus || groups.ptype.node.querySelector('button'); }
+      if (!desc) { showErr('desc'); firstFocus = firstFocus || el('fld-desc'); }
+      if (firstFocus) { try { firstFocus.focus(); } catch (e) {} return; }
+
+      const payload = {
+        name: name,
+        email: email,
+        company: el('fld-company').value.trim(),
+        website: el('fld-website').value.trim(),
+        project_type: ptype.join(', '),
+        timeline: [...groups.timeline.sel][0] || '',
+        budget: [...groups.budget.sel][0] || '',
+        description: desc.slice(0, 4000),
+        submitted_at: new Date().toLocaleString(),
+        source: (typeof location !== 'undefined' && location.href) || '',
+        _subject: 'New Project Inquiry — ' + (el('fld-company').value.trim() || name)
+      };
+
+      // loading state — disable + prevent double submit
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      submitBtn.style.cursor = 'default';
+      submitLabel.textContent = 'Sending…';
+
+      const done = () => {
+        form.style.display = 'none';
+        successPanel.style.display = 'flex';
+        try { successPanel.setAttribute('tabindex', '-1'); successPanel.focus(); } catch (e) {}
+      };
+      const fail = () => {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        submitLabel.textContent = 'Submit Project Inquiry';
+        topErr.style.display = 'block';
+      };
+
+      const configured = FORM_ENDPOINT && !/YOUR_FORM_ID/.test(FORM_ENDPOINT);
+      if (configured) {
+        try {
+          const r = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!r.ok) throw new Error('bad status ' + r.status);
+          done();
+        } catch (e) { fail(); }
+      } else {
+        // No endpoint set yet — hand off to the visitor's mail client so the
+        // inquiry still reaches you. Replace FORM_ENDPOINT for silent sending.
+        const body = [
+          'Name: ' + payload.name,
+          'Email: ' + payload.email,
+          'Company: ' + (payload.company || '—'),
+          'Website: ' + (payload.website || '—'),
+          'Project type: ' + payload.project_type,
+          'Timeline: ' + (payload.timeline || '—'),
+          'Budget: ' + (payload.budget || '—'),
+          '', payload.description
+        ].join('\n');
+        try {
+          window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(body);
+        } catch (e) {}
+        setTimeout(done, 400);
+      }
+    });
+
+    const back = el('asBackWork');
+    if (back) back.addEventListener('click', () => {
+      successPanel.style.display = 'none';
+      form.reset();
+      Object.values(groups).forEach(g => { g.sel.clear(); g.node.querySelectorAll('button[data-val]').forEach(b => setChip(b, false)); });
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.style.cursor = 'pointer';
+      submitLabel.textContent = 'Submit Project Inquiry';
+      form.style.display = 'flex';
+      const w = document.getElementById('work');
+      if (w) window.scrollTo({ top: w.offsetTop - 60, behavior: 'smooth' });
+    });
+  }
+
   _applyAccent() {
     const a = this.props.accent || '#3ad17a';
     document.documentElement.style.setProperty('--accent', a);
@@ -503,6 +792,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this._applyAccent();
+    this._initForm();
 
     if (this.props.showClock !== false) {
       this._clock();
